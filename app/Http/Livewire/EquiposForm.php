@@ -4,12 +4,14 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use App\Models\equipos;
+use Livewire\WithPagination;
 
 class EquiposForm extends Component
 {
     public $nombre_equipo;
     public $nombre_dt;
     public $logo;
+    protected $paginationTheme = 'bootstrap';
 
     protected $rules = [
         'nombre_equipo' => 'required|min:3',
@@ -18,7 +20,8 @@ class EquiposForm extends Component
         ];
     public function render()
     {
-        return view('livewire.equipos-form');
+        $lista_equipos= equipos::paginate(3);
+        return view('livewire.equipos-form', compact('lista_equipos'));
     }
     public function guardar()
     {

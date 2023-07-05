@@ -2,9 +2,9 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\equipos;
 use Livewire\Component;
-use App\Models\Jugador;
-use App\Models\Equipo;
+use App\Models\jugadores;
 
 class JugadoresForm extends Component
 {
@@ -21,14 +21,14 @@ class JugadoresForm extends Component
     ];
     public function render()
     {
-        $equipos = Equipo::all();
+        $equipos = equipos::all();
         return view('livewire.jugadores-form', compact('equipos'));
     }
     public function guardar()
     {
         $this->validate();
 
-        Jugador::create([
+        jugadores::create([
             'nombre_jugador' => $this->nombre_jugador,
             'posicion' => $this->posicion,
             'numero_camiseta' => $this->numero_camiseta,

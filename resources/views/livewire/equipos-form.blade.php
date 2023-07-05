@@ -18,3 +18,25 @@
         <button type="submit" class="btn btn-primary">Guardar</button>
     </form>
 </div>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Equipo</th>
+        <th scope="col">Director</th>
+        <th scope="col">Logo</th>
+      </tr>
+    </thead>
+    <tbody>
+        @foreach ($lista_equipos as $item)
+        <tr>
+            <th scope="row">{{$item->id}}</th>
+            <td>{{$item->nombre_equipo}}</td>
+            <td>{{$item->nombre_dt}}</td>
+            <td>{{$item->logo}}</td>
+        </tr>
+        @endforeach
+    </tbody>
+  </table>
+  {{$lista_equipos->links()}}
