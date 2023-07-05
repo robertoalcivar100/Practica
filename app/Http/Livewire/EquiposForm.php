@@ -3,8 +3,7 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
-use App\Models\Equipo;
-
+use App\Models\equipos;
 
 class EquiposForm extends Component
 {
@@ -25,7 +24,7 @@ class EquiposForm extends Component
     {
         $this->validate();
 
-        Equipo::create([
+        equipos::create([
             'nombre_equipo' => $this->nombre_equipo,
             'nombre_dt' => $this->nombre_dt,
             'logo' => $this->logo,

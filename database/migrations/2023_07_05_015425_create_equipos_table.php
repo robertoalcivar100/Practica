@@ -16,7 +16,6 @@ return new class extends Migration
             $table->string('nombre_equipo');
             $table->string('nombre_dt');
             $table->string('logo');
-            $table->timestamps();
         });
     }
 

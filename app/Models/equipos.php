@@ -7,5 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class equipos extends Model
 {
-    use HasFactory;
+    protected $table= 'equipos';
+    public $timestamps= false;
+    public $fillable = ['nombre_equipo','nombre_dt','logo'];
 }
